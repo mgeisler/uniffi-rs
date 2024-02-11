@@ -1067,6 +1067,7 @@ fn throws_name(throws: &Option<Type>) -> Option<&str> {
     match throws {
         None => None,
         Some(Type::Enum { name, .. }) => Some(name),
+        Some(Type::External { name, .. }) => Some(name),
         _ => panic!("unknown throw type: {throws:?}"),
     }
 }
